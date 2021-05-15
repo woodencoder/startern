@@ -1,0 +1,41 @@
+syntax = 'proto3';
+
+option go_package = 'startern/generated';
+
+service Companies {
+  rpc GetCompanies(GetCompaniesRequest) returns (GetCompaniesResponse);
+}
+
+message GetCompaniesRequest {
+}
+
+message GetCompaniesResponse {
+  repeated Company companies = 1;
+}
+
+message Company {
+  string id = 1;
+  string name = 2;
+}
+
+service Vacancies {
+  rpc GetVacancies(GetVacanciesRequest) returns (GetVacanciesResponse);
+} 
+
+message GetVacanciesRequest {
+}
+
+message GetVacanciesResponse {
+  repeated Vacancy vacancies = 1;
+}
+
+message VacancyInfo {
+  string title = 1;
+  string sourceUrl = 2;
+}
+
+message Vacancy {
+  string id = 1;
+  VacancyInfo info = 2;
+  Company company = 3;
+}
