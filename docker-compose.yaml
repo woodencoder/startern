@@ -1,16 +1,16 @@
 version: "3.8"
 
 volumes:
-  starten-postgres:
+  startern-postgres:
 
 services:
   postgres:
     image: "postgres:alpine"
     environment:
-      - "POSTGRES_DB=starten_db"
-      - "POSTGRES_USER=starten"
+      - "POSTGRES_DB=startern_db"
+      - "POSTGRES_USER=startern"
       - "POSTGRES_PASSWORD=secret"
     ports:
       - "5432:5432"
     volumes:
-      - "starten-postgres:/var/lib/postgresql/data"
+      - "startern-postgres:/var/lib/postgresql/data"
