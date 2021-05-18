@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/woodencoder/startern-go/auth/database"
-	"github.com/woodencoder/startern-go/auth/models"
+	"github.com/woodencoder/startern-go/core/database"
+	"github.com/woodencoder/startern-go/core/models"
 
 	"strconv"
 	"time"
