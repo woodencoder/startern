@@ -14,3 +14,21 @@ services:
       - "5432:5432"
     volumes:
       - "startern-postgres:/var/lib/postgresql/data"
+
+  core:
+    container_name: starten_core
+    build: ./core
+    ports:
+      - "8000:8000"
+    command: /core
+    depends_on:
+      - postgres
+
+  scraper:
+    container_name: starten_scraper
+    build: ./scraper
+    ports:
+      - "9000:9000"
+    command: /scraper
+    depends_on:
+      - postgres
